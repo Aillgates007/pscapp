@@ -1,10 +1,21 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import DailyTask from './components/DailyTask';
+import Subjects from './components/Subjects';
+import OldPapers from './components/OldPapers';
+import OtherBox from './components/OtherBox';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <View style={styles.align}>
+        <Subjects />
+        <DailyTask />
+
+        <OldPapers />
+        <OtherBox />
+      </View>
+
       <StatusBar style="auto" />
     </View>
   );
@@ -13,8 +24,11 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#d6d6d6",
+  },
+  align: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
   },
 });
